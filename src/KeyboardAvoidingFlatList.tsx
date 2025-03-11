@@ -12,7 +12,8 @@ export interface KeyboardAvoidingFlatListProps<TItem>
     ExternalKeyboardAvoidingContainerProps {}
 
 export const KeyboardAvoidingFlatList = generic(
-  (props: KeyboardAvoidingFlatListProps<unknown>) => {
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
+  <TItem extends unknown>(props: KeyboardAvoidingFlatListProps<TItem>) => {
     const KeyboardAvoidingContainerProps = useKeyboardAvoidingContainerProps(
       props,
     )
