@@ -12,7 +12,7 @@ export interface KeyboardAvoidingFlatListProps<TItem>
     ExternalKeyboardAvoidingContainerProps {}
 
 export const KeyboardAvoidingFlatList = generic(
-  <TItem extends unknown>(props: KeyboardAvoidingFlatListProps<TItem>) => {
+  (props: KeyboardAvoidingFlatListProps<unknown>) => {
     const KeyboardAvoidingContainerProps = useKeyboardAvoidingContainerProps(
       props,
     )

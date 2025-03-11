@@ -10,10 +10,7 @@ export function generic<
     : never
 >(Component: TComponent) {
   return Component as TComponent &
-    Pick<
-      React.ComponentType<TProps>,
-      'propTypes' | 'contextTypes' | 'defaultProps' | 'displayName'
-    >
+    Pick<React.ComponentType<TProps>, 'propTypes' | 'displayName'>
 }
 
 // Generic version of React.memo

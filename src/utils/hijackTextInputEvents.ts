@@ -1,4 +1,4 @@
-// @ts-ignore: internal module
+// @ts-expect-error: internal module
 import TextInputState from 'react-native/Libraries/Components/TextInput/TextInputState'
 import {EventEmitter} from './EventEmitter'
 

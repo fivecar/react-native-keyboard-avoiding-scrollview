@@ -1,6 +1,6 @@
 {
-  "name": "react-native-keyboard-avoiding-scroll-view",
-  "version": "0.0.0-development",
+  "name": "react-native-keyboard-avoiding-scrollview",
+  "version": "1.0.0",
   "description": "React Native ScrollView extension that prevents inputs from being covered by the keyboard",
   "keywords": [
     "react native",
@@ -10,12 +10,12 @@
     "scrollview",
     "alka"
   ],
-  "homepage": "https://github.com/alkafinance/react-native-keyboard-avoiding-scroll-view#readme",
+  "homepage": "https://github.com/fivecar/react-native-keyboard-avoiding-scroll-view#readme",
   "bugs": {
-    "url": "https://github.com/alkafinance/react-native-keyboard-avoiding-scroll-view/issues"
+    "url": "https://github.com/fivecar/react-native-keyboard-avoiding-scroll-view/issues"
   },
   "license": "MIT",
-  "author": "Ayan Yenbekbay <ayan@alka.app>",
+  "author": "Philip Su <39933441+fivecar@users.noreply.github.com>",
   "files": [
     "dist/"
   ],
@@ -25,7 +25,7 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/alkafinance/react-native-keyboard-avoiding-scroll-view.git"
+    "url": "https://github.com/fivecar/react-native-keyboard-avoiding-scroll-view.git"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -53,7 +53,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit-removed-by-fivecar": "lint-staged",
+      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -e",
       "pre-push": "yarn test"
     }
@@ -79,13 +79,12 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@alkafinance/eslint-config": "^1.0.1",
-    "@alkafinance/eslint-config-react": "^1.0.0",
-    "@alkafinance/eslint-config-typescript": "^1.0.0",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
-    "@types/react": "16.8.23",
-    "eslint": "5.10.0",
+    "@types/react": "^19.0.10",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0",
     "husky": "^3.0.1",
     "lint-staged": "^9.2.1",
     "npm-run-all": "^4.1.5",
