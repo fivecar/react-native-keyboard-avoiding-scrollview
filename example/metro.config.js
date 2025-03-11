@@ -1,4 +1,5 @@
-const path = require('path');
+// @ts-expect-error - we expect requires here
+const path = require('path')
 
 module.exports = {
   resolver: {
@@ -9,4 +10,4 @@ module.exports = {
     },
   },
   watchFolders: [path.resolve(__dirname, '../src')],
-};
+}

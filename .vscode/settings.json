@@ -65,5 +65,6 @@
   "typescript.preferences.quoteStyle": "single",
   "typescript.preferences.renameShorthandProperties": true,
 
-  "emmet.showExpandedAbbreviation": "never"
+  "emmet.showExpandedAbbreviation": "never",
+  "cSpell.words": ["scrollview"]
 }

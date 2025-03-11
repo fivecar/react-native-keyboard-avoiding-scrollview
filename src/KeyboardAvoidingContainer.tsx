@@ -219,7 +219,7 @@ export function useKeyboardAvoidingContainerProps<
 
         const {endCoordinates: newKeyboardLayout} = event
         const newFocusedTextInputNodeHandle = findNodeHandle(
-          // @ts-ignore
+          // @ts-expect-error - this type is inherently unexpected
           NativeTextInput.State.currentlyFocusedInput(),
         )
         const newStickyFooterNodeHandle = findNodeHandle(
@@ -365,7 +365,6 @@ export function useKeyboardAvoidingContainerProps<
 
   const scrollViewProps = useMemo(
     () =>
-      // eslint-disable-next-line @typescript-eslint/no-object-literal-type-assertion
       ({
         keyboardDismissMode: Platform.OS === 'ios' ? 'interactive' : 'on-drag',
         keyboardShouldPersistTaps: 'handled',
