@@ -1,8 +1,8 @@
 # react-native-keyboard-avoiding-scrollview
 
-[![npm version](https://img.shields.io/npm/v/react-native-keyboard-avoiding-scrollview.svg)](https://www.npmjs.org/package/react-native-keyboard-avoiding-scrollview)
+[![npm version](https://img.shields.io/npm/v/react-native-keyboard-avoiding-scrollview.svg)](https://www.npmjs.org/package/@fivecar/react-native-keyboard-avoiding-scrollview)
 [![CircleCI Status](https://img.shields.io/circleci/project/github/fivecar/react-native-keyboard-avoiding-scrollview/master.svg)](https://circleci.com/gh/fivecar/workflows/react-native-keyboard-avoiding-scrollview/tree/master)
-![license: MIT](https://img.shields.io/npm/l/react-native-keyboard-avoiding-scrollview.svg)
+![license: MIT](https://img.shields.io/npm/l/@fivecar/react-native-keyboard-avoiding-scrollview.svg)
 ![Supports Android and iOS](https://img.shields.io/badge/platforms-android%20|%20ios-lightgrey.svg)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
@@ -24,16 +24,16 @@ risk.
 
 ## Getting started
 
-`$ yarn add react-native-keyboard-avoiding-scrollview --save`
+`$ yarn add @fivecar/react-native-keyboard-avoiding-scrollview`
 OR
-`$ npm install react-native-keyboard-avoiding-scrollview --save`
+`$ npm install @fivecar/react-native-keyboard-avoiding-scrollview --save`
 
 ## Usage
 
 Import `KeyboardAvoidingScrollView`, `KeyboardAvoidingFlatList`, or `KeyboardAvoidingSectionList` and use them like the regular `ScrollView`, `FlatList` or `SectionList` components from React Native. Internally, these components are wrapped in another custom component called `KeyboardAvoidingContainer`, which is also exported for advanced use cases.
 
 ```javascript
-import {KeyboardAvoidingScrollView} from 'react-native-keyboard-avoiding-scrollview';
+import {KeyboardAvoidingScrollView} from '@fivecar/react-native-keyboard-avoiding-scrollview';
 
 function MyComponent() {
   return (
