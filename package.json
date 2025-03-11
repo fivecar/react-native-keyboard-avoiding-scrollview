@@ -8,7 +8,7 @@
     "keyboard avoiding",
     "keyboard aware",
     "scrollview",
-    "alka"
+    "keyboardavoidingview"
   ],
   "homepage": "https://github.com/fivecar/react-native-keyboard-avoiding-scrollview#readme",
   "bugs": {
@@ -28,7 +28,8 @@
     "url": "https://github.com/fivecar/react-native-keyboard-avoiding-scrollview.git"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "scripts": {
     "typecheck": "tsc --noEmit --pretty",
