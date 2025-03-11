@@ -9,7 +9,7 @@
 
 The modern React Native ScrollView extension that prevents inputs from being
 covered by the keyboard. Forked from
-[react-native-keyboard-avoiding-scroll-view](https://www.npmjs.com/package/react-native-keyboard-avoiding-scroll-view)
+[react-native-keyboard-avoiding-scrollview](https://www.npmjs.com/package/react-native-keyboard-avoiding-scrollview)
 (that's right - with the hyphen) because it hasn't been maintained in over 6
 years.
 

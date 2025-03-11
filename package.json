@@ -10,9 +10,9 @@
     "scrollview",
     "alka"
   ],
-  "homepage": "https://github.com/fivecar/react-native-keyboard-avoiding-scroll-view#readme",
+  "homepage": "https://github.com/fivecar/react-native-keyboard-avoiding-scrollview#readme",
   "bugs": {
-    "url": "https://github.com/fivecar/react-native-keyboard-avoiding-scroll-view/issues"
+    "url": "https://github.com/fivecar/react-native-keyboard-avoiding-scrollview/issues"
   },
   "license": "MIT",
   "author": "Philip Su <39933441+fivecar@users.noreply.github.com>",
@@ -25,7 +25,7 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/fivecar/react-native-keyboard-avoiding-scroll-view.git"
+    "url": "https://github.com/fivecar/react-native-keyboard-avoiding-scrollview.git"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
