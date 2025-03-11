@@ -7,12 +7,12 @@ import {
 } from './KeyboardAvoidingContainer'
 import {generic} from './utils/react'
 
-export interface KeyboardAvoidingFlatListProps<TItem extends {id: string}>
+export interface KeyboardAvoidingFlatListProps<TItem>
   extends FlatListProps<TItem>,
     ExternalKeyboardAvoidingContainerProps {}
 
 export const KeyboardAvoidingFlatList = generic(
-  <TItem extends {id: string}>(props: KeyboardAvoidingFlatListProps<TItem>) => {
+  <TItem extends unknown>(props: KeyboardAvoidingFlatListProps<TItem>) => {
     const KeyboardAvoidingContainerProps = useKeyboardAvoidingContainerProps(
       props,
     )

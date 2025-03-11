@@ -4,26 +4,26 @@ import {
   findNodeHandle,
   Keyboard,
   KeyboardEvent,
+  KeyboardMetrics,
   LayoutAnimation,
   LayoutChangeEvent,
   NativeScrollEvent,
   NativeSyntheticEvent,
+  TextInput as NativeTextInput,
   Platform,
   SafeAreaView,
-  ScreenRect,
   ScrollView,
   ScrollViewProps,
   StyleProp,
   StyleSheet,
-  TextInput as NativeTextInput,
   View,
   ViewProps,
   ViewStyle,
 } from 'react-native'
-import {NoInfer} from './utils/utility-types'
-import {genericMemo} from './utils/react'
-import {measureInWindow} from './utils/measureInWindow'
 import {hijackTextInputEvents} from './utils/hijackTextInputEvents'
+import {measureInWindow} from './utils/measureInWindow'
+import {genericMemo} from './utils/react'
+import {NoInfer} from './utils/utility-types'
 
 const {height: SCREEN_HEIGHT} = Dimensions.get('window')
 const KEYBOARD_PADDING = 48
@@ -89,9 +89,9 @@ export function useKeyboardAvoidingContainerProps<
 
   const scrollPositionRef = useRef(0)
   const scrollViewOffsetRef = useRef(0)
-  const keyboardLayoutRef = useRef<ScreenRect | null>(null)
-  const stickyFooterLayoutRef = useRef<ScreenRect | null>(null)
-  const focusedTextInputLayoutRef = useRef<ScreenRect | null>(null)
+  const keyboardLayoutRef = useRef<KeyboardMetrics | null>(null)
+  const stickyFooterLayoutRef = useRef<KeyboardMetrics | null>(null)
+  const focusedTextInputLayoutRef = useRef<KeyboardMetrics | null>(null)
   const layoutAnimationConfiguredRef = useRef(false)
 
   const [scrollViewOffset, setScrollViewOffset] = useState(0)
@@ -218,7 +218,10 @@ export function useKeyboardAvoidingContainerProps<
         if (keyboardLayoutRef.current) return
 
         const {endCoordinates: newKeyboardLayout} = event
-        const newFocusedTextInputNodeHandle = NativeTextInput.State.currentlyFocusedField()
+        const newFocusedTextInputNodeHandle = findNodeHandle(
+          // @ts-ignore
+          NativeTextInput.State.currentlyFocusedInput(),
+        )
         const newStickyFooterNodeHandle = findNodeHandle(
           stickyFooterRef.current,
         )

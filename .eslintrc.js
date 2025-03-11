@@ -21,4 +21,4 @@ module.exports = {
       ...require('@alkafinance/eslint-config/script'),
     },
   ],
-};
+}
