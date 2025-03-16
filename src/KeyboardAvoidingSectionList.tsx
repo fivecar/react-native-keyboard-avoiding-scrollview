@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {forwardRef, useImperativeHandle} from 'react'
 import {SectionList, SectionListProps} from 'react-native'
 import {
   ExternalKeyboardAvoidingContainerProps,
@@ -12,18 +12,26 @@ export interface KeyboardAvoidingSectionListProps<TItem extends {id: string}>
     ExternalKeyboardAvoidingContainerProps {}
 
 export const KeyboardAvoidingSectionList = generic(
-  <TItem extends {id: string}>(
-    props: KeyboardAvoidingSectionListProps<TItem>,
-  ) => {
-    const KeyboardAvoidingContainerProps = useKeyboardAvoidingContainerProps(
-      props,
-    )
+  forwardRef<SectionList, KeyboardAvoidingSectionListProps<any>>(
+    (props, ref) => {
+      const {
+        scrollViewRef,
+        ...KeyboardAvoidingContainerProps
+      } = useKeyboardAvoidingContainerProps(props)
 
-    return (
-      <KeyboardAvoidingContainer
-        {...KeyboardAvoidingContainerProps}
-        ScrollViewComponent={SectionList}
-      />
-    )
-  },
+      // Use useImperativeHandle to expose the internal scrollViewRef to the parent
+      useImperativeHandle(ref, () => {
+        // @ts-expect-error We know it's a scrollview
+        return (scrollViewRef!.current as any)?.getScrollResponder() as ScrollView;
+      })
+
+      return (
+        <KeyboardAvoidingContainer
+          {...KeyboardAvoidingContainerProps}
+          ScrollViewComponent={SectionList}
+          scrollViewRef={scrollViewRef}
+        />
+      )
+    },
+  ),
 )

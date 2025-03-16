@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {forwardRef, useImperativeHandle} from 'react'
 import {FlatList, FlatListProps} from 'react-native'
 import {
   ExternalKeyboardAvoidingContainerProps,
@@ -12,17 +12,24 @@ export interface KeyboardAvoidingFlatListProps<TItem>
     ExternalKeyboardAvoidingContainerProps {}
 
 export const KeyboardAvoidingFlatList = generic(
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
-  <TItem extends unknown>(props: KeyboardAvoidingFlatListProps<TItem>) => {
-    const KeyboardAvoidingContainerProps = useKeyboardAvoidingContainerProps(
-      props,
-    )
+  forwardRef<FlatList, KeyboardAvoidingFlatListProps<any>>((props, ref) => {
+    const {
+      scrollViewRef,
+      ...KeyboardAvoidingContainerProps
+    } = useKeyboardAvoidingContainerProps(props)
+
+  // Use useImperativeHandle to expose the internal scrollViewRef to the parent
+  useImperativeHandle(ref, () => {
+    // @ts-expect-error We know it's a scrollview
+    return (scrollViewRef!.current as any)?.getScrollResponder() as ScrollView;
+  })
 
     return (
       <KeyboardAvoidingContainer
         {...KeyboardAvoidingContainerProps}
         ScrollViewComponent={FlatList}
+        scrollViewRef={scrollViewRef}
       />
     )
-  },
+  }),
 )
