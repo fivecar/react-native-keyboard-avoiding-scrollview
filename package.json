@@ -1,6 +1,6 @@
 {
   "name": "@fivecar/react-native-keyboard-avoiding-scrollview",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "React Native ScrollView extension that prevents inputs from being covered by the keyboard",
   "keywords": [
     "react native",
